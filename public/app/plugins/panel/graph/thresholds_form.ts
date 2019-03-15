@@ -26,6 +26,8 @@ export class ThresholdFormCtrl {
     this.panel.thresholds.push({
       value: undefined,
       colorMode: 'critical',
+      fillColor: '#000000',
+      lineColor: '#000000',
       op: 'gt',
       fill: true,
       line: true,
@@ -52,6 +54,7 @@ export class ThresholdFormCtrl {
 
   onLineColorChange(index) {
     return newColor => {
+      console.log('this', this);
       this.panel.thresholds[index].lineColor = newColor;
       this.render();
     };
